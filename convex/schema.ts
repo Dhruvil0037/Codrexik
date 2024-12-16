@@ -3,7 +3,7 @@ import { v } from "convex/values";
 
 export default defineSchema({
   users: defineTable({
-    userId: v.string(), 
+    userId: v.string(),
     email: v.string(),
     name: v.string(),
     isPro: v.boolean(),
@@ -25,14 +25,14 @@ export default defineSchema({
     title: v.string(),
     language: v.string(),
     code: v.string(),
-    userName: v.string(),
+    userName: v.string(), 
   }).index("by_user_id", ["userId"]),
 
   snippetComments: defineTable({
     snippetId: v.id("snippets"),
     userId: v.string(),
     userName: v.string(),
-    content: v.string(),
+    content: v.string(), 
   }).index("by_snippet_id", ["snippetId"]),
 
   stars: defineTable({
