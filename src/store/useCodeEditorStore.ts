@@ -95,7 +95,6 @@ export const useCodeEditorStore = create<CodeEditorState>((set, get) => {
 
         const data = await response.json();
 
-        console.log("data back from piston:", data);
         if (data.message) {
           set({ error: data.message, executionResult: { code, output: "", error: data.message } });
           return;

@@ -40,7 +40,6 @@ http.route({
 
       return new Response("Webhook processed successfully", { status: 200 });
     } catch (error) {
-      console.log("Webhook error:", error);
       return new Response("Error processing webhook", { status: 500 });
     }
   }),
@@ -78,7 +77,6 @@ http.route({
         "svix-signature": svix_signature,
       }) as WebhookEvent;
     } catch (err) {
-      console.error("Error verifying webhook:", err);
       return new Response("Error occurred", { status: 400 });
     }
 
@@ -96,7 +94,6 @@ http.route({
           name,
         });
       } catch (error) {
-        console.log("Error creating user:", error);
         return new Response("Error creating user", { status: 500 });
       }
     }
